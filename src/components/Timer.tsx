@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import useInterval from '../lib/useInterval'
-import ms from 'pretty-ms'
+import ms from '../lib/pretty-ms'
 import {
   PlayArrowRounded,
   PauseRounded,
@@ -30,7 +30,7 @@ const Timer: FC<TimerProps> = ({ time, onClickRemove }) => {
         .join(' ')}
     >
       <span className="text-6xl font-thin lining-nums tabular-nums">
-        {ms((time - count) * 1000, { colonNotation: true })}
+        {ms((time - count) * 1000)}
       </span>
       <div className="px-2">
         <button
