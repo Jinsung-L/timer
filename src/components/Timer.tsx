@@ -5,13 +5,15 @@ import {
   PlayArrowRounded,
   PauseRounded,
   RestoreRounded,
+  CloseRounded,
 } from '@material-ui/icons'
 
 export interface TimerProps {
   time: number
+  onClickRemove?: () => void
 }
 
-const Timer: FC<TimerProps> = ({ time }) => {
+const Timer: FC<TimerProps> = ({ time, onClickRemove }) => {
   const [count, setCount] = useState(0)
   const [isStop, setIsStop] = useState(false)
   const isEnd = count >= time
@@ -60,6 +62,19 @@ const Timer: FC<TimerProps> = ({ time }) => {
         >
           <RestoreRounded style={{ fontSize: 28 }} />
         </button>
+        {onClickRemove && (
+          <button
+            className={[
+              'p-2',
+              !(isStop || isEnd) && 'opacity-25 cursor-not-allowed',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            onClick={() => (isStop || isEnd) && onClickRemove()}
+          >
+            <CloseRounded style={{ fontSize: 32 }} />
+          </button>
+        )}
       </div>
     </div>
   )
