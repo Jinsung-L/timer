@@ -1,3 +1,5 @@
+const colors = require('@tailwindcss/postcss7-compat/colors')
+
 module.exports = {
   purge: [
     './src/**/*.{js,jsx,ts,tsx}',
@@ -6,7 +8,11 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blueGray: colors.blueGray,
+      },
+    },
   },
   variants: {
     extend: {},
