@@ -1,6 +1,6 @@
 {
   "name": "@jinsung.lim/timer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple timer application",
   "bin": "./bin/serve.js",
   "files": [
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^6.1.1",
+    "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "@testing-library/jest-dom": "^5.11.9",
