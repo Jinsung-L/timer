@@ -1,19 +1,25 @@
 import { useReducer, useState } from 'react'
 import { AddRounded } from '@material-ui/icons'
+import useSound from 'use-sound'
 import Timer from './components/Timer'
+import DurationPicker from './components/DurationPicker'
 import {
   addTimer,
   removeTimer,
   timerReducer,
   TimerState,
 } from './lib/timer-reducer'
-import DurationPicker from './components/DurationPicker'
+
+const alarmSfx = require('./assets/alarm.mp3').default
 
 const initialState: TimerState = { timers: [] }
 
 function App() {
   const [state, dispatch] = useReducer(timerReducer, initialState)
   const [duration, setDuration] = useState(5 * 60)
+
+  // Preload sound assets
+  useSound(alarmSfx)
 
   return (
     <div className="flex flex-col items-center min-h-screen py-20 antialiased text-white min-w-screen bg-blueGray-700">

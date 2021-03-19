@@ -1,5 +1,6 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import useInterval from '../lib/useInterval'
+import useSound from 'use-sound'
 import ms from '../lib/pretty-ms'
 import {
   PlayArrowRounded,
@@ -7,6 +8,8 @@ import {
   RestoreRounded,
   CloseRounded,
 } from '@material-ui/icons'
+
+const alarmSfx = require('../assets/alarm.mp3').default
 
 export interface TimerProps {
   time: number
@@ -19,6 +22,14 @@ const Timer: FC<TimerProps> = ({ time, onClickRemove }) => {
   const isEnd = count >= time
 
   useInterval(() => setCount(count + 1), isEnd || isStop ? null : 1000)
+
+  const [play, { stop }] = useSound(alarmSfx, {
+    loop: true,
+    interrupt: true,
+  } as any)
+
+  useEffect(() => (isEnd ? play() : stop()), [isEnd, play, stop])
+  useEffect(() => () => stop(), [stop])
 
   return (
     <div
