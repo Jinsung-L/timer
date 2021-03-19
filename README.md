@@ -2,6 +2,8 @@
 
 A simple timer application.
 
+https://timer-jinsung.vercel.app
+
 ## Usage
 
 ```sh
