@@ -1,29 +1,30 @@
 {
-  "name": "timer",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.1.1",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^12.20.6",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.2",
-    "parse-ms": "^2.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.2.3",
-    "web-vitals": "^1.1.1"
-  },
+  "name": "@jinsung.lim/timer",
+  "version": "1.0.0",
+  "description": "Simple timer application",
+  "bin": "./bin/serve.js",
+  "files": [
+    "bin",
+    "build"
+  ],
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
+  },
+  "author": {
+    "email": "js99028@gmail.com",
+    "name": "Jinsung Lim",
+    "url": "https://github.com/Jinsung-L"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jinsung-L/timer"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jinsung-L/timer/issues"
   },
   "eslintConfig": {
     "extends": [
@@ -44,9 +45,29 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^6.1.1",
+    "@material-ui/icons": "^4.11.2",
     "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^13.0.2",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
     "autoprefixer": "^9.8.6",
+    "parse-ms": "^2.1.0",
     "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+    "typescript": "^4.2.3",
+    "web-vitals": "^1.1.1"
+  },
+  "dependencies": {
+    "get-port": "^5.1.1",
+    "open": "^7.4.2",
+    "serve-handler": "^6.1.3"
   }
 }
