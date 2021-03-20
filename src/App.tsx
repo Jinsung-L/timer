@@ -12,7 +12,16 @@ import {
 
 const alarmSfx = require('./assets/alarm.mp3').default
 
-const initialState: TimerState = { timers: [] }
+const params = new URL(window.location.href).searchParams
+const initialState: TimerState = {
+  timers:
+    params
+      .get('times')
+      ?.split(',')
+      .map(Number)
+      .filter(Boolean)
+      .map((time, id) => ({ id, time })) ?? [],
+}
 
 function App() {
   const [state, dispatch] = useReducer(timerReducer, initialState)
